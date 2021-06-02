@@ -3,12 +3,12 @@ Répertoire pour explorer les capacités du Tesseract OCR (Optical Character Rec
 
 ## Pytesseract 
 
-Le package Pytesseract est un wrapper de [Tesseract OCR](https://github.com/tesseract-ocr/tesseract) qui permet d'utiliser ses fonctions écrites en C+ dans le langage Python. Quelques prétraitements sont cependant nécessaires avant de laisser [Pytesseract](https://github.com/madmaze/pytesseract) effectuer la détection. Après quelques essais sur des images brutes entières avec une bonne luminosité, il semble effectivement que Pytesseract ait besoin de d'un peu d'aide pour effectuer correctement la détection. 
+Le package Pytesseract est un wrapper de [Tesseract OCR](https://github.com/tesseract-ocr/tesseract) qui permet d'utiliser ses fonctions écrites en C+ dans le langage Python. Quelques prétraitements sont cependant nécessaires avant de laisser [Pytesseract](https://github.com/madmaze/pytesseract) effectuer la détection. Après quelques essais sur des images brutes entières avec une bonne luminosité, il semble effectivement que Pytesseract ait besoin de d'un peu d'aide pour effectuer correctement la détection. Pytesseract est designé avant tout pour effectuer la reconnaissance de long textes littéraires et non de lettres/chiffres individuels.
 
 Une séquence possible de prétraitements possibles d'après la vidéo du [TheAIGuy](https://www.youtube.com/watch?v=AAPZLK41rek) :
 
 
-Opération # | Transformation | Code
+Opération | Transformation | Code
 :----------:|:--------------|:--------
 1 | Convertir l'image en nuances de gris |`cv2.cvtColor(img , cv2.color_BGR2GRAY)`
 2 | Augmenter la taille comme Pytesseract est optimisé pour une image de taille donnée | `cv2.resize`
